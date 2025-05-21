@@ -8,7 +8,135 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
+  <style>
+    /* Additional styles for the evaluation form */
+    .evaluation-form-container {
+      padding: 2rem;
+    }
+
+    .evaluation-controls {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .evaluation-table th {
+      background-color: #f8f8f8;
+      border: 1px solid #010408;
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    .evaluation-table td {
+      
+      border: 1px solid #000000;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    .evaluation-table tr td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+
+    .evaluation-table td.score-cell select {
+      width: 50px;
+      padding: 0.25rem;
+      text-align: center;
+      border: 1px solid #040608;
+      border-radius: 4px;
+    }
+
+    .score-comment {
+      display: none;
+      padding: 1rem;
+      background-color: #F7FAFC;
+      border-radius: 5px;
+      margin-top: 0.5rem;
+      border-left: 3px solid #6B46C1;
+      font-size: 0.9rem;
+    }
+
+    .score-comment.active {
+      display: block;
+    }
+
+    .score-5-cell {
+      background-color: #9AE6B4;
+    }
+
+    .score-4-cell {
+      background-color: #C6F6D5;
+    }
+
+    .score-3-cell {
+      background-color: #FEFCBF;
+    }
+
+    .score-2-cell,
+    .score-1-cell {
+      background-color: #FED7D7;
+    }
+
+    .comment-box {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #E2E8F0;
+      border-radius: 5px;
+      resize: vertical;
+      min-height: 100px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .progress-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 1rem;
+    }
+
+    .progress-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-number {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .progress-step.active .step-number {
+      background-color: #6B46C1;
+      color: white;
+    }
+
+    .progress-step.completed .step-number {
+      background-color: #38A169;
+      color: white;
+    }
+
+    .step-label {
+      font-size: 0.8rem;
+      color: #718096;
+      font-weight: 500;
+    }
+
+    .progress-step.active .step-label {
+      color: #2D3748;
+    }
+  </style>
 </head>
 
 <body>
