@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cohorts - Tech Talent Scorecard System</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-text">TTSS</div>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="admin-dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="admin-cohorts.html" class="active"><i class="fas fa-users"></i> Cohorts</a></li>
+        <li><a href="admin-groups.html"><i class="fas fa-layer-group"></i> Groups</a></li>
+        <li><a href="admin-evaluations.html"><i class="fas fa-clipboard-check"></i> Evaluations</a></li>
+        <li><a href="admin-mentors.html"><i class="fas fa-user-tie"></i> Mentors</a></li>
+        <li><a href="admin-students.html"><i class="fas fa-user-graduate"></i> Students</a></li>
+        <li><a href="admin-reports.html"><i class="fas fa-file-alt"></i> Reports</a></li>
+        <li><a href="admin-settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="dashboard-header">
+        <h1>Cohorts Management</h1>
+        <div class="user-profile">
+          <div class="user-avatar">A</div>
+          <div class="user-info">
+            <div class="user-name">Admin User</div>
+            <div class="user-role">Administrator</div>
+          </div>
+        </div>
+      </div>
+
+      <section class="active-cohorts">
+        <h2>Active Cohorts</h2>
+        <button class="add-cohort-btn">Add New Cohort</button>
+        
+        <div class="cohorts-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Cohort Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Students</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AI Academy</td>
+                <td>Jan 15, 2025</td>
+                <td>Dec 15, 2025</td>
+                <td>30</td>
+                <td><span class="status-active">Active</span></td>
+                <td><a href="#" class="action-link">Manage</a></td>
+              </tr>
+              <tr>
+                <td>Cloud Computing</td>
+                <td>Feb 1, 2025</td>
+                <td>Jan 30, 2026</td>
+                <td>25</td>
+                <td><span class="status-active">Active</span></td>
+                <td><a href="#" class="action-link">Manage</a></td>
+              </tr>
+              <tr>
+                <td>Demand</td>
+                <td>Mar 1, 2025</td>
+                <td>Feb 28, 2026</td>
+                <td>30</td>
+                <td><span class="status-active">Active</span></td>
+                <td><a href="#" class="action-link">Manage</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

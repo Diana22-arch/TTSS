@@ -482,4 +482,63 @@ form button.login-btn {
   color: #6b46c1;
   text-decoration: underline;
 }
+/* Cohorts Management */
+.active-cohorts {
+  padding: 20px;
+}
+
+.active-cohorts h2 {
+  margin-bottom: 20px;
+  color: #23395d;
+}
+
+.add-cohort-btn {
+  background-color: #6d3fcf;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.cohorts-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cohorts-table th {
+  background-color: #f8fafc;
+  color: #4a5568;
+  font-weight: 600;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.cohorts-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.status-active {
+  color: #2f855a;
+  background-color: #c6f6d5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.action-link {
+  color: #6d3fcf;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.action-link:hover {
+  text-decoration: underline;
+}
 
