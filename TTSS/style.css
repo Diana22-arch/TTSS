@@ -1,0 +1,485 @@
+/* Background and layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('background.png'); /* Replace with your own image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: #333;
+}
+
+.background {
+  /*backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.85);*/
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header with logo image */
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo-container {
+  text-align: center;
+}
+
+.logo-img {
+  width: 160px;
+  height: auto;
+}
+
+.back-arrow {
+  font-size: 2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+/* Main content styling */
+main {
+  flex-grow: 1;
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2em;
+  color: #6d3fcf;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  color: #c63b8a;
+  margin-top: 0;
+}
+
+.description {
+  margin: 10px auto 30px;
+  max-width: 800px;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Login button in main */
+.login-container {
+  margin-top: 20px;
+}
+
+.login-btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #6d3fcf;
+  color: white;
+  padding: 12px 28px;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9em;
+  background-color: #eee;
+}
+
+/* login Page layouts */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+  padding: 40px;
+  /*background-color: rgba(255, 255, 255, 0.95);*/
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.login-page, .signup-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 40px;
+}
+
+.login-left, .signup-page {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-right {
+  flex-grow: 1;
+  color: #2f2f92;
+  margin-left: 60px;
+}
+
+.login-right h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.login-right ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+}
+
+/*form page style*/
+form input, form select {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button.login-btn {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.forgot-link, .signup-link, .back-login {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-page {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.signup-page form {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/*Student dashboard page*/
+/* Sidebar container */
+.sidebar {
+  width: 60px; /* Collapsed width */
+  background: linear-gradient(to bottom right, #e63946, #6f42c1);
+  height: 100vh;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Expand on hover */
+.sidebar:hover {
+  width: 220px;
+}
+
+/* Logo and text */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Sidebar links */
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.nav-menu li {
+  margin: 10px 0;
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.nav-menu a i {
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Show text only on hover */
+.sidebar:not(:hover) .nav-menu a span {
+  display: none;
+}
+
+/* Active/hover states */
+.nav-menu a.active,
+.nav-menu a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Main content shifted for sidebar */
+.main-content {
+  margin-left: 60px;
+  transition: margin-left 0.3s ease;
+  padding: 1rem;
+}
+
+.sidebar:hover ~ .main-content {
+  margin-left: 220px;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  color: #2d2d2d;
+  font-weight: 600;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  background-color: #6b46c1;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-info .user-name {
+  font-weight: 600;
+}
+
+.user-info .user-role {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Metric Cards Row */
+.performance-cards {
+  display: flex;
+  gap: 20px; /* space between cards */
+  flex-wrap: wrap; /* if screen is too narrow, cards will wrap to next line */
+}
+
+.card {
+  flex: 1 1 250px; /* grow and shrink, with a base width of 250px */
+  border: 1px solid #ccc;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.card-grid {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.card-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+}
+
+.card-content {
+  margin-top: 1rem;
+}
+
+.progress-label {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Progress Circle */
+.progress-circle {
+  --size: 80px;
+  --percent: 70;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: conic-gradient(#6b46c1 calc(var(--percent) * 1%), #eee 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-weight: 600;
+}
+
+/* Evaluation Table */
+.evaluation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.evaluation-table th,
+.evaluation-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.evaluation-table th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+}
+
+.score-cell {
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  width: 50px;
+}
+
+.score-5 {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.score-4 {
+  background-color: #bee3f8;
+  color: #2a4365;
+}
+
+.score-3 {
+  background-color: #fefcbf;
+  color: #744210;
+}
+
+.overall-score {
+  font-weight: 700;
+  text-align: center;
+  color: #2b6cb0;
+}
+
+/* Comment Section */
+.comment-section {
+  margin-top: 1.5rem;
+}
+
+.mentor-comment {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background-color: #f7fafc;
+  padding: 1rem;
+  border-left: 4px solid #6b46c1;
+  border-radius: 5px;
+}
+
+/* Improvement Area Cards */
+.improvement-item {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1rem;
+}
+
+.improvement-item h3 {
+  font-size: 1rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.resources a {
+  color: #6b46c1;
+  text-decoration: underline;
+}
+
