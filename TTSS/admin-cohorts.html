@@ -41,7 +41,43 @@
 
       <section class="active-cohorts">
         <h2>Active Cohorts</h2>
-        <button class="add-cohort-btn">Add New Cohort</button>
+        <button class="add-cohort-btn" onclick="openCohortModal()">Add New Cohort</button>
+
+        <!-- Cohort Modal Form -->
+        <div id="cohortModal" class="modal">
+          <div class="modal-content">
+            <h2>Add New Cohort</h2>
+            <form id="cohortForm">
+              <div class="form-group">
+                <label for="cohortName">Cohort Name</label>
+                <input type="text" id="cohortName" name="cohortName" required>
+              </div>
+              <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" name="startDate" required>
+              </div>
+              <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate" name="endDate" required>
+              </div>
+              <div class="form-group">
+                <label for="students">Number of Students</label>
+                <input type="number" id="students" name="students" min="1" required>
+              </div>
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" name="status" required>
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive</option>
+                </select>
+              </div>
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn" onclick="closeCohortModal()">Cancel</button>
+                <button type="submit" class="submit-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
         
         <div class="cohorts-table">
           <table>
@@ -62,7 +98,7 @@
                 <td>Dec 15, 2025</td>
                 <td>30</td>
                 <td><span class="status-active">Active</span></td>
-                <td><a href="#" class="action-link">Manage</a></td>
+                <td><a href="#" class="action-link">View</a></td>
               </tr>
               <tr>
                 <td>Cloud Computing</td>
@@ -70,7 +106,7 @@
                 <td>Jan 30, 2026</td>
                 <td>25</td>
                 <td><span class="status-active">Active</span></td>
-                <td><a href="#" class="action-link">Manage</a></td>
+                <td><a href="#" class="action-link">View</a></td>
               </tr>
               <tr>
                 <td>Demand</td>
@@ -78,7 +114,7 @@
                 <td>Feb 28, 2026</td>
                 <td>30</td>
                 <td><span class="status-active">Active</span></td>
-                <td><a href="#" class="action-link">Manage</a></td>
+                <td><a href="#" class="action-link">View</a></td>
               </tr>
             </tbody>
           </table>

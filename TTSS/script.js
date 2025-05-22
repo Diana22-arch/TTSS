@@ -5,6 +5,8 @@ console.log("Tech Talent Scorecard System ready.");
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
   const signupForm = document.getElementById('signupForm');
+  const addGroupBtn = document.querySelector('.add-group-btn');
+
 
   if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
@@ -12,14 +14,55 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Logging in (stub)'); // Replace with real logic
     });
   }
-
+ if (addGroupBtn) {
+    addGroupBtn.addEventListener('click', () => {
+      // Add your group creation logic here
+      alert('Add new group clicked');
+    });
+  }
   if (signupForm) {
     signupForm.addEventListener('submit', (e) => {
       e.preventDefault();
       alert('Account created (stub)'); // Replace with real logic
     });
   }
+
 });
+/* Add new cohort functionality - Start */
+function openCohortModal() {
+  const modal = document.getElementById('cohortModal');
+  modal.style.display = 'block';
+}
+
+function closeCohortModal() {
+  const modal = document.getElementById('cohortModal');
+  modal.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cohortForm = document.getElementById('cohortForm');
+  if (cohortForm) {
+    cohortForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Get form values
+      const formData = {
+        cohortName: document.getElementById('cohortName').value,
+        startDate: document.getElementById('startDate').value,
+        endDate: document.getElementById('endDate').value,
+        students: document.getElementById('students').value,
+        status: document.getElementById('status').value
+      };
+      
+      // Here you would typically send this data to your backend
+      console.log('New cohort data:', formData);
+      
+      // Close the modal and reset form
+      closeCohortModal();
+      cohortForm.reset();
+    });
+  }
+});
+/* Add new cohort functionality - End */
 
 document.addEventListener('DOMContentLoaded', () => {
   const sidebar = document.querySelector('.sidebar');
@@ -30,7 +73,55 @@ document.addEventListener('DOMContentLoaded', () => {
       sidebar.classList.toggle('expanded');
     });
   }
+   if (addGroupBtn) {
+    addGroupBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+  }
+
+  if (addGroupForm) {
+    addGroupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form values
+      const groupName = document.getElementById('groupName').value;
+      const cohort = document.getElementById('cohort').value;
+      const members = document.getElementById('members').value;
+      const mentor = document.getElementById('mentor').value;
+      const status = document.getElementById('status').value;
+
+      // Create new table row
+      const tbody = document.querySelector('.groups-table tbody');
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${groupName}</td>
+        <td>${cohort}</td>
+        <td>${members}</td>
+        <td>${mentor}</td>
+        <td><span class="status-active">${status}</span></td>
+        <td><a href="#" class="action-link">Manage</a></td>
+      `;
+      tbody.appendChild(newRow);
+
+      // Close modal and reset form
+      modal.style.display = 'none';
+      addGroupForm.reset();
+    });
+  }
 });
+
+function closeModal() {
+  const modal = document.getElementById('addGroupModal');
+  modal.style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById('addGroupModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+}
 
 // JavaScript for handling score selection and comments display
     document.addEventListener('DOMContentLoaded', function () {
@@ -107,174 +198,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-// JavaScript for report page
-// Reports data - in a real application, this would come from an API
-const sampleReports = [
-    {
-      id: 1,
-      name: "Q2 Cohort Performance",
-      type: "cohort",
-      createdBy: "Admin User",
-      generatedAt: "2023-06-15"
-    },
-    {
-      id: 2,
-      name: "Web Development Student Progress",
-      type: "student",
-      createdBy: "Admin User",
-      generatedAt: "2023-07-10"
-    },
-    {
-      id: 3,
-      name: "Technical Interview Evaluations",
-      type: "evaluation",
-      createdBy: "Admin User",
-      generatedAt: "2023-08-05"
-    }
-  ];
-  
-  // DOM elements
-  const reportsTableBody = document.getElementById('reports-table-body');
-  const generateReportButtons = document.querySelectorAll('.generate-report-btn');
-  const createReportBtn = document.querySelector('.create-report-btn');
-  const toast = document.getElementById('toast');
-  
-  // Display reports in the table
-  function displayReports(reports) {
-    if (reports.length === 0) {
-      reportsTableBody.innerHTML = `
-        <tr>
-          <td colspan="5" class="empty-state">No reports found. Generate a report to get started.</td>
-        </tr>
-      `;
-      return;
-    }
-  
-    reportsTableBody.innerHTML = reports.map(report => `
-      <tr>
-        <td>${report.name}</td>
-        <td>${capitalizeFirstLetter(report.type)}</td>
-        <td>${report.createdBy}</td>
-        <td>${formatDate(report.generatedAt)}</td>
-        <td>
-          <div class="action-buttons">
-            <button class="action-btn download-btn" data-id="${report.id}" title="Download">
-              <i class="fas fa-download"></i>
-            </button>
-            <button class="action-btn edit-btn" data-id="${report.id}" title="Edit">
-              <i class="fas fa-edit"></i>
-            </button>
-            <button class="action-btn delete delete-btn" data-id="${report.id}" title="Delete">
-              <i class="fas fa-trash"></i>
-            </button>
-          </div>
-        </td>
-      </tr>
-    `).join('');
-  
-    // Add event listeners to action buttons
-    document.querySelectorAll('.download-btn').forEach(btn => {
-      btn.addEventListener('click', () => handleDownload(parseInt(btn.dataset.id)));
-    });
-  
-    document.querySelectorAll('.edit-btn').forEach(btn => {
-      btn.addEventListener('click', () => handleEdit(parseInt(btn.dataset.id)));
-    });
-  
-    document.querySelectorAll('.delete-btn').forEach(btn => {
-      btn.addEventListener('click', () => handleDelete(parseInt(btn.dataset.id)));
-    });
-  }
-  
-  // Generate report handler
-  function handleGenerateReport(type) {
-    // In a real application, this would make an API call
-    showToast('Report Generated', `Your ${type} report has been generated successfully.`);
-    
-    // Simulate adding a new report
-    const newReport = {
-      id: sampleReports.length + 1,
-      name: `New ${capitalizeFirstLetter(type)} Report`,
-      type: type,
-      createdBy: "Admin User",
-      generatedAt: new Date().toISOString().split('T')[0]
-    };
-    
-    sampleReports.push(newReport);
-    displayReports(sampleReports);
-  }
-  
-  // Download report handler
-  function handleDownload(id) {
-    const report = sampleReports.find(r => r.id === id);
-    showToast('Download Started', `Downloading ${report.name}...`);
-    // In a real application, this would initiate a file download
-  }
-  
-  // Edit report handler
-  function handleEdit(id) {
-    const report = sampleReports.find(r => r.id === id);
-    showToast('Edit Report', `Editing ${report.name}...`);
-    // In a real application, this would open an edit form
-  }
-  
-  // Delete report handler
-  function handleDelete(id) {
-    const report = sampleReports.find(r => r.id === id);
-    const confirmDelete = confirm(`Are you sure you want to delete "${report.name}"?`);
-    
-    if (confirmDelete) {
-      const index = sampleReports.findIndex(r => r.id === id);
-      sampleReports.splice(index, 1);
-      displayReports(sampleReports);
-      showToast('Report Deleted', `${report.name} has been deleted.`);
-    }
-  }
-  
-  // Create new report handler
-  function handleCreateReport() {
-    showToast('Create Report', 'This functionality will be implemented in future versions.');
-    // In a real application, this would open a form to create a new report
-  }
-  
-  // Show toast notification
-  function showToast(title, message) {
-    const toastTitle = toast.querySelector('.toast-title');
-    const toastMessage = toast.querySelector('.toast-message');
-    
-    toastTitle.textContent = title;
-    toastMessage.textContent = message;
-    
-    toast.classList.add('show');
-    
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 3000);
-  }
-  
-  // Helper function to capitalize the first letter of a string
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-  
-  // Helper function to format date
-  function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-  }
-  
-  // Add event listeners
-  generateReportButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const reportType = button.dataset.reportType;
-      handleGenerateReport(reportType);
-    });
-  });
-  
-  createReportBtn.addEventListener('click', handleCreateReport);
-  
-  // Initialize the page
-  document.addEventListener('DOMContentLoaded', () => {
-    displayReports(sampleReports);
-  });
-  
+
