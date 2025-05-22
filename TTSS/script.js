@@ -277,3 +277,4 @@ const sampleReports = [
   document.addEventListener('DOMContentLoaded', () => {
     displayReports(sampleReports);
   });
+  
