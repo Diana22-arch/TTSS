@@ -30,7 +30,55 @@ document.addEventListener('DOMContentLoaded', () => {
       sidebar.classList.toggle('expanded');
     });
   }
+   if (addGroupBtn) {
+    addGroupBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+  }
+
+  if (addGroupForm) {
+    addGroupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Get form values
+      const groupName = document.getElementById('groupName').value;
+      const cohort = document.getElementById('cohort').value;
+      const members = document.getElementById('members').value;
+      const mentor = document.getElementById('mentor').value;
+      const status = document.getElementById('status').value;
+
+      // Create new table row
+      const tbody = document.querySelector('.groups-table tbody');
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${groupName}</td>
+        <td>${cohort}</td>
+        <td>${members}</td>
+        <td>${mentor}</td>
+        <td><span class="status-active">${status}</span></td>
+        <td><a href="#" class="action-link">Manage</a></td>
+      `;
+      tbody.appendChild(newRow);
+
+      // Close modal and reset form
+      modal.style.display = 'none';
+      addGroupForm.reset();
+    });
+  }
 });
+
+function closeModal() {
+  const modal = document.getElementById('addGroupModal');
+  modal.style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById('addGroupModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+}
 
 // JavaScript for handling score selection and comments display
     document.addEventListener('DOMContentLoaded', function () {
@@ -107,3 +155,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
