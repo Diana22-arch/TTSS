@@ -152,3 +152,7 @@ const cohortData = [
       });
     });
   });
+  // Placeholder for Add New Mentor functionality
+function addMentor() {
+  alert('Add mentor functionality to be implemented');
+}

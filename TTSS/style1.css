@@ -1,0 +1,112 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+  }
+  
+  .sidebar {
+    width: 240px;
+    background-color: #102542;
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-logo {
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .nav-menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav-menu li {
+    padding: 15px 20px;
+  }
+  
+  .nav-menu li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .nav-menu li a.active {
+    background-color: #1e3a8a;
+    border-radius: 5px;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .user-avatar {
+    background-color: #6d28d9;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  .btn {
+    background-color: #6d28d9;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .card {
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: none;
+  }
+  
+  .evaluation-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .evaluation-table th, .evaluation-table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .evaluation-table thead {
+    background-color: #fca5a5;
+  }
+  
+  .view-link {
+    color: #6d28d9;
+    text-decoration: none;
+  }
+  

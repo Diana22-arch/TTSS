@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentors - Tech Talent Scorecard System</title>
+  <link rel="stylesheet" href="style1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo-text">TTSS</div>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="admin-cohorts.html"><i class="fas fa-users"></i> Cohorts</a></li>
+        <li><a href="admin-groups.html"><i class="fas fa-layer-group"></i> Groups</a></li>
+        <li><a href="admin-evaluations.html"><i class="fas fa-clipboard-check"></i> Evaluations</a></li>
+        <li><a href="mentor.html" class="active"><i class="fas fa-user-tie"></i> Mentors</a></li>
+        <li><a href="admin-students.html"><i class="fas fa-user-graduate"></i> Students</a></li>
+        <li><a href="report.html"><i class="fas fa-file-alt"></i> Reports</a></li>
+        <li><a href="admin-settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+        <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="dashboard-header">
+        <h1>Mentors Management</h1>
+        <div class="user-profile">
+          <div class="user-avatar">A</div>
+          <div class="user-info">
+            <div class="user-name">Admin User</div>
+            <div class="user-role">Administrator</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-controls">
+        <button class="btn" onclick="addMentor()">Add New Mentor</button>
+      </div>
+
+      <div class="card">
+        <table class="evaluation-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Current Cohorts</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Smith</td>
+              <td>john.smith@email.com</td>
+              <td>AI/ML</td>
+              <td>Active</td>
+              <td><a href="#" class="view-link">View Profile</a></td>
+            </tr>
+            <tr>
+              <td>Sarah Johnson</td>
+              <td>sarah.j@email.com</td>
+              <td>Data Science</td>
+              
+              <td>Active</td>
+              <td><a href="#" class="view-link">View Profile</a></td>
+            </tr>
+            <tr>
+              <td>Michael Chen</td>
+              <td>m.chen@email.com</td>
+              <td>Cloud Computing</td>
+              
+              <td>Active</td>
+              <td><a href="#" class="view-link">View Profile</a></td>
+            </tr>
+            <tr>
+              <td>Emma Wilson</td>
+              <td>e.wilson@email.com</td>
+              <td>Web Development</td>
+              
+              <td>On Leave</td>
+              <td><a href="#" class="view-link">View Profile</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
